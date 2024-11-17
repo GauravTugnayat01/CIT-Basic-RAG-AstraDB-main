@@ -1,0 +1,40 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 377.5,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 395,
+      "y": 846,
+      "index": -1
+    },
+    "Embedding_OpenAI": {
+      "x": 140,
+      "y": 176,
+      "index": 0
+    },
+    "python_node_AstraDB": {
+      "x": 140,
+      "y": 310,
+      "index": 1
+    },
+    "python_node_extract_context": {
+      "x": 490,
+      "y": 444,
+      "index": 2
+    },
+    "llm_node_rt39": {
+      "x": 402.5,
+      "y": 578,
+      "index": 3
+    },
+    "python_node_dmyt": {
+      "x": 315,
+      "y": 712,
+      "index": 4
+    }
+  },
+  "orientation": "Vertical"
+}

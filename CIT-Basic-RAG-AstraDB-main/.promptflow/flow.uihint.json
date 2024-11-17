@@ -1,0 +1,58 @@
+{
+  "nodes": {
+    "llm_node_epj5": {
+      "variant_0": {
+        "inputs": {
+          "response_format": []
+        }
+      }
+    },
+    "llm_node_4pzv": {
+      "variant_0": {
+        "inputs": {
+          "response_format": [],
+          "question": [],
+          "documents": [],
+          "model": [],
+          "context": []
+        }
+      }
+    },
+    "llm_node_xhjj": {
+      "variant_0": {
+        "inputs": {
+          "model": [],
+          "response_format": [],
+          "context": [],
+          "question": []
+        }
+      }
+    },
+    "llm_node_rt39": {
+      "variant_0": {
+        "inputs": {
+          "model": [],
+          "response_format": [],
+          "context": [],
+          "question": [],
+          "documents": []
+        }
+      }
+    },
+    "python_node_dmyt": {
+      "variant_0": {
+        "inputs": {
+          "astradbJSON": [],
+          "input1": []
+        }
+      }
+    },
+    "prompt_node_djqo": {
+      "variant_0": {
+        "inputs": {
+          "text": []
+        }
+      }
+    }
+  }
+}
