@@ -1,0 +1,56 @@
+inputs:
+  Question:
+    type: string
+    default: What are the cancellation charges of confirmed ticket?
+    is_chat_input: true
+outputs:
+  PromptflowOutput:
+    type: string
+    reference: ${python_node_dmyt.output}
+nodes:
+- name: Embedding_OpenAI
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: to_replace_with_connection_name
+    input: ${inputs.Question}
+    model: text-embedding-ada-002
+- name: python_node_AstraDB
+  type: python
+  source:
+    type: code
+    path: python_node_AstraDB.py
+  inputs:
+    query_vector: ${Embedding_OpenAI.output}
+- name: python_node_extract_context
+  type: python
+  source:
+    type: code
+    path: python_node_extract_context.py
+  inputs:
+    input1: ${python_node_AstraDB.output}
+- name: llm_node_rt39
+  type: llm
+  source:
+    type: code
+    path: llm_node_epj5.jinja2
+  inputs:
+    model: gpt-3.5-turbo
+    temperature: 0.5
+    max_tokens: 200
+    response_format:
+      type: text
+    question: ${inputs.Question}
+    documents: ${python_node_extract_context.output}
+  connection: to_replace_with_connection_name
+  api: chat
+- name: python_node_dmyt
+  type: python
+  source:
+    type: code
+    path: python_node_format_output.py
+  inputs:
+    astradbJSON: ${python_node_AstraDB.output}
+    input1: ${llm_node_rt39.output}
